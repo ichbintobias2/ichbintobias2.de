@@ -1,5 +1,5 @@
 <template>
-  <h1>Vue.js</h1>
+  <h1>{{ title }}</h1>
   <img v-bind:src="'data:image/jpeg;base64,' + image" />
   <img v-bind:src="rating + '-Stars.png'" />
 </template>

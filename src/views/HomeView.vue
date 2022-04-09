@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div id="game">
-      <GameComponent />
+      <GameComponent title="Vue.js" />
     </div>
     <div id="review">
       <ReviewComponent />
