@@ -22,8 +22,14 @@ export default {
 </script>
 
 <style scoped>
+  div.home {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
   div {
     float: left;
-    border-width: 50px;
+    min-width: 50%;
+    max-width: 50%;
   }
 </style>

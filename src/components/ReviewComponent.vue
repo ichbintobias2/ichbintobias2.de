@@ -103,5 +103,6 @@ h1 {
 
 p {
   text-align: left;
+  padding-right: 25px;
 }
 </style>
