@@ -1,18 +1,42 @@
 <template>
   <h1>Vue.js</h1>
-
-  <img src="@/assets/logo.png" />
-  <img src="@/assets/5-Stars.png" />
+  <img v-bind:src="'data:image/jpeg;base64,' + image" />
+  <img v-bind:src="rating + '-Stars.png'" />
 </template>
 
-<style scoped>
-  h1 {
-    text-align: center;
+<script>
+export default {
+  name: 'GameComponent',
+  components: {},
+  props: ['title'],
+  data () {
+    return {
+      image: '',
+      rating: ''
+    }
+  },
+  mounted () {
+    this.getImageAndRating()
+  },
+  methods: {
+    async getImageAndRating () {
+      const response = await fetch('sample_rating.json')
+      const data = await response.json()
+      this.image = data.image
+      this.rating = data.rating
+    }
   }
+}
+</script>
 
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+<style scoped>
+h1 {
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
